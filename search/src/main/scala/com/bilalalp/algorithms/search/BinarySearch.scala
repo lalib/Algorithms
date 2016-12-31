@@ -1,5 +1,7 @@
 package com.bilalalp.algorithms.search
 
+import scala.annotation.tailrec
+
 object BinarySearch {
 
   def search[T](elementArray: Array[T], element: T)(implicit ordering: Ordering[T]): Int = {
@@ -22,7 +24,8 @@ object BinarySearch {
 
   def searchRecursively[T](elementArray: Array[T], element: T)(implicit ordering: Ordering[T]): Int = {
 
-    def innerSearch[T](minIndex: Int, maxIndex: Int): Int = {
+    @tailrec
+    def innerSearch(minIndex: Int, maxIndex: Int): Int = {
 
       if (minIndex >= maxIndex) -1
 

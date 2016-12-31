@@ -27,4 +27,8 @@ class BinarySearchTest extends FlatSpec {
   it should "not find anything among unsorted numbers and return -1" in {
     assert(BinarySearch.search(unsortedNumberArray, 3) == -1)
   }
+
+  it should "return 8th index" in {
+    assert(BinarySearch.search(sortedNumberArray,9) == 8)
+  }
 }
