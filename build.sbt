@@ -13,4 +13,4 @@ lazy val commonSettings = Seq(
 
 lazy val root = (project in file(".")).aggregate(search)
 
-lazy val search = project.in(file("./search")).settings(commonSettings: _*)
+lazy val search = project.in(file("./searching")).settings(commonSettings: _*)
