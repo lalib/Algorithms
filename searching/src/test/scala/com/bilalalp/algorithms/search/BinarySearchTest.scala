@@ -1,4 +1,4 @@
-package com.bilalalp.algorithms.search
+package com.bilalalp.algorithms.searching
 
 import org.scalatest.FlatSpec
 
