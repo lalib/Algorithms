@@ -12,4 +12,10 @@ class SelectionSortTest extends FlatSpec {
     SelectionSort.sort(unsortedNumberArray)
     assert(sortedNumberArray === unsortedNumberArray)
   }
+
+  it should "should return the sorted array" in {
+    val clonedArray = sortedNumberArray.clone()
+    SelectionSort.sort(sortedNumberArray)
+    assert(sortedNumberArray === clonedArray)
+  }
 }
