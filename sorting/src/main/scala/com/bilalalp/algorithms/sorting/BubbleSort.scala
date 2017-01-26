@@ -2,7 +2,7 @@ package com.bilalalp.algorithms.sorting
 
 object BubbleSort extends AbstractSort {
 
-  override def sort[T](elementArray: Array[T])(implicit ordering: Ordering[T]): Unit = {
+  override def sort[T: Manifest](elementArray: Array[T])(implicit ordering: Ordering[T]): Unit = {
 
     var swapped: Boolean = true
 

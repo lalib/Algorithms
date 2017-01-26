@@ -2,7 +2,7 @@ package com.bilalalp.algorithms.sorting
 
 object InsertionSort extends AbstractSort {
 
-  override def sort[T](elementArray: Array[T])(implicit ordering: Ordering[T]): Unit = {
+  override def sort[T: Manifest](elementArray: Array[T])(implicit ordering: Ordering[T]): Unit = {
 
     for (i <- 1 until elementArray.length) {
       val element: T = elementArray(i)
