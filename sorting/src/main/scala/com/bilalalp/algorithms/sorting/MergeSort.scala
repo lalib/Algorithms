@@ -25,32 +25,32 @@ object MergeSort extends AbstractSort {
     var leftChange: Int = left
     var rightEndChange: Int = rightEnd
 
-    while (left <= leftEnd && rightChange <= rightEnd) {
-      k = k + 1
+    while (leftChange <= leftEnd && rightChange <= rightEnd) {
       if (ordering.compare(elementArray(leftChange), elementArray(rightChange)) <= 0) {
-        leftChange = leftChange + 1
         tempElementArray(k) = elementArray(leftChange)
+        leftChange = leftChange + 1
       } else {
-        rightChange = rightChange + 1
         tempElementArray(k) = elementArray(rightChange)
+        rightChange = rightChange + 1
       }
+      k = k + 1
     }
 
     while (leftChange <= leftEnd) {
-      k = k + 1
-      leftChange = leftChange + 1
       tempElementArray(k) = elementArray(leftChange)
+      leftChange = leftChange + 1
+      k = k + 1
     }
 
-    while (right <= rightEnd) {
-      k = k + 1
-      rightChange = rightChange + 1
+    while (rightChange <= rightEnd) {
       tempElementArray(k) = elementArray(rightChange)
+      rightChange = rightChange + 1
+      k = k + 1
     }
 
     for (i <- Range(0, num)) {
-      rightEndChange = rightEndChange - 1
       elementArray(rightEndChange) = tempElementArray(rightEndChange)
+      rightEndChange = rightEndChange - 1
     }
   }
 }

@@ -9,13 +9,13 @@ class MergeSortTest extends FlatSpec {
   val sortedNumberArray: Array[Int] = Array(-2, 1, 6, 9, 33, 52, 65, 70, 409)
 
   "Merge Sort" should "sort the array" in {
-    InsertionSort.sort(unsortedNumberArray)
+    MergeSort.sort(unsortedNumberArray)
     assert(sortedNumberArray === unsortedNumberArray)
   }
 
   it should "should return the sorted array" in {
     val clonedArray = sortedNumberArray.clone()
-    InsertionSort.sort(sortedNumberArray)
+    MergeSort.sort(sortedNumberArray)
     assert(sortedNumberArray === clonedArray)
   }
 }
