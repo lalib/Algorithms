@@ -37,6 +37,16 @@ class HeapStructure[T: Manifest](implicit ordering: Ordering[T]) {
     element
   }
 
+  def sort(): Array[T] = {
+
+    val totalSize: Int = position
+
+    for (i <- 0 until totalSize) heapArray(position) = extract()
+
+    position = totalSize
+    heapArray.reverse
+  }
+
   @tailrec
   private def sinkDown(pos: Int): Unit = {
     var smallest: Int = pos

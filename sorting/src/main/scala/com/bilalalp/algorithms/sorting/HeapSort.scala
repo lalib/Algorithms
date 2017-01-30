@@ -8,8 +8,8 @@ object HeapSort extends AbstractSort {
 
     val heapOperation: HeapStructure[T] = new HeapStructure[T]
     heapOperation createHeap elementArray
+    val sortedArray = heapOperation.sort()
 
-    for (i <- elementArray.indices)
-      elementArray(i) = heapOperation extract()
+    for (i <- elementArray.indices) elementArray(i) = sortedArray(i)
   }
 }
