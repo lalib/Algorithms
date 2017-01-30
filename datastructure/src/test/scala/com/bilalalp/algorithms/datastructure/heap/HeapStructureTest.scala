@@ -44,7 +44,7 @@ class HeapStructureTest extends FlatSpec {
   }
 
 
-  it should "return elements as sorted" in {
+  it should "return elements in an order" in {
     val unsortedNumberArray: Array[Int] = Array(1, 65, 6, 52, 409, 33, 70, -2, 9)
     val sortedNumberArray: Array[Int] = Array(-2, 1, 6, 9, 33, 52, 65, 70, 409)
 
