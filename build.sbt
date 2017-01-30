@@ -11,10 +11,10 @@ lazy val commonSettings = Seq(
   libraryDependencies ++= Seq("org.scalatest" % "scalatest_2.12" % "3.0.1" % "test")
 )
 
-lazy val algorithms = (project in file(".")).aggregate(searching, sorting,datastructure)
+lazy val algorithms = Project(id = "algorithms", base = file(".")).aggregate(searching, sorting, datastructure)
 
-lazy val searching = project.in(file("./searching")).settings(commonSettings: _*)
+lazy val searching = Project(id = "searching", base = file("./searching")).settings(commonSettings: _*)
 
-lazy val sorting = project.in(file("./sorting")).settings(commonSettings: _*)
+lazy val datastructure = Project(id = "datastructure", base = file("./datastructure")).settings(commonSettings: _*)
 
-lazy val datastructure = project.in(file("./datastructure")).settings(commonSettings: _*)
+lazy val sorting = Project(id = "sorting", base = file("./sorting")).settings(commonSettings: _*).dependsOn(datastructure)

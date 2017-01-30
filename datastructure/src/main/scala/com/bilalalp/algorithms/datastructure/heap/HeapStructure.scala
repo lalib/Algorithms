@@ -42,7 +42,8 @@ class HeapStructure[T: Manifest](implicit ordering: Ordering[T]) {
     var smallest: Int = pos
     if (2 * pos < position && ordering.compare(heapArray(smallest), heapArray(2 * pos)) > 0)
       smallest = 2 * pos
-    else if (2 * pos + 1 < position && ordering.compare(heapArray(smallest), heapArray(2 * pos + 1)) > 0)
+
+    if (2 * pos + 1 < position && ordering.compare(heapArray(smallest), heapArray(2 * pos + 1)) > 0)
       smallest = 2 * pos + 1
 
     if (smallest != pos) {
