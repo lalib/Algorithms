@@ -41,7 +41,7 @@ class HeapStructure[T: Manifest](implicit ordering: Ordering[T]) {
 
     val totalSize: Int = position
 
-    for (i <- 0 until totalSize) heapArray(position) = extract()
+    while (position != 0) heapArray(position - 1) = extract()
 
     position = totalSize
     heapArray.reverse
