@@ -21,7 +21,7 @@ class DoubleLinkedList[T: Manifest] {
 
   def size(): Int = {
     @tailrec
-    def size(node: DoubleNode[T], acc: Int): Int = if (null != node) size(tail.prev, acc + 1) else acc
+    def size(node: DoubleNode[T], acc: Int): Int = if (null != node) size(node.prev, acc + 1) else acc
 
     size(tail, 0)
   }
